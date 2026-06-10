@@ -1,0 +1,21 @@
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Secrets and local config — never commit
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*secret*
+!**/secrets-management*/
+
+# Editor/tool local state
+.vscode/
+.idea/
+.claude/settings.local.json
+
+# Scratch space that should never go public
+scratch/
+*.local.md

@@ -15,7 +15,7 @@
 
 ## Skill Packages
 
-Promoted Codex skills should use this shape:
+Promoted skills should use this shape, one folder per supported runtime:
 
 ```text
 skills/codex/skill-name/
@@ -23,7 +23,48 @@ skills/codex/skill-name/
   examples/
   scripts/
   templates/
+
+skills/claude/skill-name/
+  SKILL.md
+  examples/
+  scripts/
+  templates/
 ```
+
+A skill does not need to be promoted to every runtime at once. Promote to
+`skills/codex/` and/or `skills/claude/` independently, based on which
+`*-port/` candidates exist and pass the promotion checklist.
+
+## Runtime Notes
+
+- Codex `SKILL.md` frontmatter should stick to the minimal `name` and
+  `description` fields.
+- Claude Code `SKILL.md` frontmatter supports the same `name` and
+  `description` fields, plus optional Claude-specific fields such as
+  `allowed-tools`, `disable-model-invocation`, and `argument-hint`. Only add
+  these when the skill genuinely needs them, and note their purpose in
+  `notes.md`.
+- When porting a skill, keep runtime-specific frontmatter out of the other
+  runtime's port (e.g. strip Claude-only fields from `codex-port/SKILL.md`,
+  and vice versa).
+
+## Public Repo Hygiene
+
+This repo is public. Before committing, check that the change contains:
+
+- No secrets: API keys, tokens, passwords, kubeconfigs, `.env` contents, or private keys.
+- No private PII: personal emails, phone numbers, addresses, employer-internal names,
+  or absolute local paths like `/Users/<name>/...`.
+- No paid or private source text (course material, internal docs, licensed content
+  beyond what the license permits).
+- No raw transcript dumps from agent sessions.
+
+Experiment workspaces under `labs/.../experiments/` may contain personal learning
+context (goals, dates, self-assessments) — that is accepted. Anything beyond that
+(credentials, cluster endpoints, employer specifics) must be redacted before commit.
+
+If something sensitive does land in a commit, treat it as leaked: rotate the secret,
+then rewrite history — deleting the file in a follow-up commit is not enough.
 
 ## Evals
 

@@ -39,6 +39,9 @@ This lab copy includes the upstream license in `original/LICENSE`.
 - Preserved the upstream files under `original/`.
 - Drafted a Codex candidate under `codex-port/`.
 - Removed upstream Claude-specific metadata from the candidate Codex port.
+- Drafted a Claude Code candidate under `claude-port/`, reusing the condensed `codex-port/`
+  content and restoring the upstream `disable-model-invocation` and `argument-hint`
+  frontmatter fields.
 - Added manual eval cases under `evals/teach/`.
 
 ## Human Review Items

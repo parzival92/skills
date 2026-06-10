@@ -21,14 +21,14 @@ If the task is an external skill intake, also read:
 ## Repo Rules
 
 - Use `labs/skills/<skill-name>/` for copied, adapted, or experimental skills.
-- Use `skills/codex/<skill-name>/` only for promoted Codex-compatible skills.
+- Use `skills/codex/<skill-name>/` only for promoted Codex-compatible skills, and `skills/claude/<skill-name>/` only for promoted Claude Code-compatible skills. A skill may be promoted to one or both, independently.
 - Every copied external skill must have a `SOURCE.md`.
 - Store verbatim originals under `original/` only when license and size allow.
 - Mark uncertain provenance, authorship, or license facts as `NEEDS HUMAN REVIEW`.
 - Manual evals are Markdown scenarios, not a heavy framework.
 - Every promoted skill needs at least two manual eval cases.
 - Do not promote a skill unless it passes the promotion checklist.
-- Keep secrets, paid/private source text, and raw transcript dumps out of the repo.
+- This repo is public. Keep secrets, private PII, absolute local paths, paid/private source text, and raw transcript dumps out of it. Follow "Public Repo Hygiene" in `docs/conventions.md` before every commit.
 
 ## Memory
 
