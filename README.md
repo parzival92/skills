@@ -1,10 +1,32 @@
 # Skills Lab
 
-This repo is a hybrid lab and library for experimenting with LLM skills, adapting useful external skills, testing them on real ideas, and promoting the useful ones into polished, runtime-specific packages.
+A structured repository for experimenting with, adapting, evaluating, and packaging reusable `SKILL.md` workflows for Codex and Claude Code.
 
-The repo supports both Codex and Claude Code `SKILL.md` formats as canonical executable formats, kept in parallel `codex/` and `claude/` ports and packages. The structure is intentionally runtime-agnostic, so other LLM or agent formats can be added later as explicit ports or adapters.
+The project keeps rough experiments separate from promoted skills. External material is tracked with provenance notes, runtime-specific adaptations are maintained independently, and candidate skills are checked against realistic evaluation cases before promotion.
 
-## Layout
+## Purpose
+
+- Explore skill ideas without treating early experiments as finished packages.
+- Preserve source, author, license, and adaptation context for external skills.
+- Maintain separate Codex and Claude Code ports when runtime behavior differs.
+- Test skills with realistic manual evaluation cases and expected outcomes.
+- Promote only the skills that are documented, reproducible, and safe to reuse.
+
+## Workflow
+
+```text
+Idea -> Intake -> Lab Experiment -> Runtime Port -> Evaluation -> Promotion
+```
+
+1. Record rough ideas in [`labs/inbox.md`](labs/inbox.md).
+2. Create a lab workspace under `labs/skills/<skill-name>/`.
+3. Document provenance and licensing context in `SOURCE.md`.
+4. Keep copied source separate from adaptations and experiments.
+5. Draft Codex and/or Claude Code candidates in their runtime-specific port folders.
+6. Add at least two realistic evaluation cases with expected behavior.
+7. Run the [promotion checklist](docs/promotion-checklist.md) before moving a skill into a published runtime package.
+
+## Repository Structure
 
 ```text
 labs/
@@ -12,6 +34,7 @@ labs/
   skills/
     skill-name/
       SOURCE.md
+      notes.md
       original/
       experiments/
       codex-port/
@@ -51,14 +74,35 @@ docs/
   promotion-checklist.md
 ```
 
-## Normal Workflow
+## Quality Gates
 
-1. Copy or link an external skill into `labs/skills/<skill-name>/`.
-2. Fill `SOURCE.md` with provenance, license, and uncertainty notes.
-3. Keep exact copied source in `original/` when license and size allow.
-4. Try messy changes in `experiments/`.
-5. Draft runtime candidates in `codex-port/` and/or `claude-port/`.
-6. Add at least two manual eval cases under `evals/<skill-name>/`.
-7. Promote mature work into `skills/codex/<skill-name>/` and/or `skills/claude/<skill-name>/`, per runtime.
+A skill is ready for promotion only when:
 
-Use `prompts/intake-external-skill.md` when asking Codex to fill the intake files for a copied skill.
+- Provenance and usage rights are documented without unresolved critical gaps.
+- `SKILL.md` follows the target runtime format.
+- Trigger guidance and "do not use" guidance are clear.
+- At least two realistic evaluation cases and expected outcomes exist.
+- At least one worked example is included.
+- Referenced scripts and templates exist.
+- The package does not depend on hidden secrets or one-off local context.
+
+See [`docs/promotion-checklist.md`](docs/promotion-checklist.md) for the complete checklist.
+
+## Key Documents
+
+| Document | Purpose |
+| --- | --- |
+| [`docs/conventions.md`](docs/conventions.md) | Naming, provenance, runtime packaging, public repository hygiene, and evaluation rules |
+| [`docs/promotion-checklist.md`](docs/promotion-checklist.md) | Required checks before a skill is promoted |
+| [`prompts/intake-external-skill.md`](prompts/intake-external-skill.md) | Repeatable intake prompt for adapting an external skill |
+| [`labs/inbox.md`](labs/inbox.md) | Staging area for skill ideas before creating a full lab workspace |
+
+## Runtime Model
+
+Codex and Claude Code use `SKILL.md` as the executable skill format, but runtime-specific metadata and behavior may differ. This repository keeps their ports and promoted packages separate so each runtime can evolve without leaking incompatible configuration into the other.
+
+A skill can be promoted for one runtime before the other when only one port has passed its evaluation and promotion checks.
+
+## Public Repository Safety
+
+Before committing, check that changes contain no credentials, kubeconfigs, private environment values, employer-internal information, private personal data, paid source material, or raw agent transcripts. If sensitive data reaches Git history, rotate the secret and rewrite the affected history.
