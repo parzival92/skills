@@ -12,7 +12,10 @@ Read the provided source skill, then:
 2. Create or update `labs/skills/<skill-name>/notes.md`.
 3. Preserve verbatim source under `labs/skills/<skill-name>/original/` only if license and size allow.
 4. Put messy experiments under `labs/skills/<skill-name>/experiments/`.
-5. Draft a Codex candidate under `labs/skills/<skill-name>/codex-port/SKILL.md`.
+5. Draft a Codex candidate under `labs/skills/<skill-name>/codex-port/SKILL.md` and/or a Claude
+   Code candidate under `labs/skills/<skill-name>/claude-port/SKILL.md`, depending on which
+   runtimes are relevant. Strip runtime-specific frontmatter that doesn't apply to the other port
+   (see `docs/conventions.md`).
 6. Create at least two manual eval cases under `evals/<skill-name>/cases/`.
 7. Create matching expected behavior notes under `evals/<skill-name>/expected/`.
 
@@ -20,6 +23,6 @@ Rules:
 
 - Mark uncertain author, source, license, or usage-rights facts as `NEEDS HUMAN REVIEW`.
 - Do not invent URLs, license terms, or original intent.
-- Do not promote directly into `skills/codex/` during intake.
-- Keep copied source and adapted Codex skill text separate.
+- Do not promote directly into `skills/codex/` or `skills/claude/` during intake.
+- Keep copied source and adapted skill text separate per runtime port.
 - Keep private, paid, or secret material out of the repo unless the user explicitly confirms it is safe.

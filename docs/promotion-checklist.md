@@ -1,11 +1,15 @@
 # Promotion Checklist
 
-Use this checklist before moving a lab skill from `labs/skills/<skill-name>/codex-port/` to `skills/codex/<skill-name>/`.
+Use this checklist before moving a lab skill from `labs/skills/<skill-name>/codex-port/` to
+`skills/codex/<skill-name>/`, or from `labs/skills/<skill-name>/claude-port/` to
+`skills/claude/<skill-name>/`. Run it once per target runtime; a skill can be promoted to
+one runtime before the other.
 
 ## Required
 
 - `SOURCE.md` exists and has no unresolved critical provenance gaps.
-- `SKILL.md` exists and follows Codex skill format.
+- `SKILL.md` exists and follows the target runtime's skill format (see `docs/conventions.md`
+  for runtime-specific frontmatter notes).
 - The skill has clear trigger guidance.
 - The skill has clear "do not use" guidance.
 - At least two realistic manual eval cases exist.
