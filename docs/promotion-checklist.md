@@ -18,6 +18,29 @@ one runtime before the other.
 - Any scripts or templates referenced by `SKILL.md` exist.
 - The skill does not require hidden secrets or one-off local context.
 
+## Craft / Quality
+
+The Required checks confirm a skill is *complete and safe*. These confirm it is
+*well-crafted* — predictable and token-efficient. Vocabulary is defined in
+`labs/skills/writing-great-skills/` (intaken from Matt Pocock, MIT). Run the executable
+audit-pass in `labs/skills/writing-great-skills/claude-port/SKILL.md` rather than checking
+these by hand.
+
+- Invocation choice is justified: `disable-model-invocation` is set when the skill only ever
+  fires by hand; a model-invoked description is present only when the agent (or another
+  skill) must reach it on its own.
+- No duplication: each meaning lives in one place (single source of truth). In particular,
+  an "Output Expectations" / summary block does not restate the workflow steps.
+- No-ops removed: every line changes behaviour versus the model's default; weak instructions
+  ("be thorough", "make it nice") are cut or replaced with a stronger leading word.
+- Completion criteria are checkable: each step ends on a condition the agent can tell
+  done-from-not-done, and is exhaustive where it matters (guards against premature
+  completion).
+- Leading words are exploited: restated triads/phrases are collapsed into a single
+  pretrained concept where one exists.
+- Progressive disclosure applied: reference only some branches need is pushed behind a
+  context pointer; `SKILL.md` is not bloated (no sprawl/sediment).
+
 ## Recommended
 
 - Run the eval cases manually after meaningful edits.

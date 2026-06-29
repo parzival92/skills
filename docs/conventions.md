@@ -1,5 +1,13 @@
 # Conventions
 
+## Skill Craft Vocabulary
+
+When writing, reviewing, or discussing a skill, use the shared vocabulary defined in
+`labs/skills/writing-great-skills/` (predictability, context load vs cognitive load, leading
+word, completion criterion, progressive disclosure, no-op, duplication, sediment, sprawl,
+single source of truth). The Craft / Quality section of `docs/promotion-checklist.md` gates
+on these, and the audit-pass in that skill's `claude-port/` runs the checks.
+
 ## Naming
 
 - Use lowercase kebab-case for skill folder names.
