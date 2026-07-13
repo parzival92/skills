@@ -13,7 +13,7 @@ This file stores durable repo decisions and lessons. It is curated project memor
 - Verbatim originals can be stored under `original/` when license and size allow; otherwise store links and notes only.
 - Codex may fill metadata, notes, evals, and candidate ports automatically, but uncertain facts must be marked `NEEDS HUMAN REVIEW`.
 - Promoted skills require at least two manual eval cases (shared across runtimes unless behavior genuinely diverges).
-- This repo is public: secrets, private PII, local paths, and transcript dumps are banned per "Public Repo Hygiene" in `docs/conventions.md`. Personal learning context inside `experiments/` workspaces is explicitly accepted.
+- This repo is treated as public (currently private on GitHub, but hygiene rules assume public): secrets, private PII, local paths, and transcript dumps are banned per "Public Repo Hygiene" in `docs/conventions.md`. Personal learning state no longer lives here — see Skill Test Workspaces.
 - Claude Code `SKILL.md` files may use extra frontmatter fields (e.g. `allowed-tools`, `disable-model-invocation`, `argument-hint`) that Codex ports should strip; see `docs/conventions.md`.
 
 ## Intake History
@@ -24,11 +24,11 @@ This file stores durable repo decisions and lessons. It is curated project memor
 
 ## Original Skills
 
-- `research` (2026-07-11) is the first fully original skill authored in `labs/skills/` (no external upstream; `SOURCE.md` records in-repo authorship). Its per-user state deliberately lives outside the repo in `~/.devops-research/` because the repo is public and the state grows daily.
+- `research` (2026-07-11) is the first fully original skill authored in `labs/skills/` (no external upstream; `SOURCE.md` records in-repo authorship). Its per-user state deliberately lives outside the repo in `~/Developer/devops-research/` because the repo is public and the state grows daily.
 
 ## Skill Test Workspaces
 
-- The first live `teach` experiment uses `labs/skills/teach/experiments/cka-june-2026-workspace/` so learning files do not pollute the repo root.
+- The first live `teach` experiment ran in `labs/skills/teach/experiments/cka-june-2026-workspace/` so learning files did not pollute the repo root. On 2026-07-13 all live track workspaces moved out of this repo to a private home. Same doctrine as `research` state: personal, daily-growing data lives outside this repo.
 
 ## Promotion Gate
 

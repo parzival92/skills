@@ -1,7 +1,7 @@
 # Source Registry (default)
 
 Query building blocks for `brief` step 2. Copy this file to
-`~/.devops-research/sources.md` and edit it there to customize — the state-dir copy wins.
+`~/Developer/devops-research/sources.md` and edit it there to customize — the state-dir copy wins.
 
 ## Tier 1 — sweep every brief (one query per group)
 

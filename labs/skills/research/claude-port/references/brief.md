@@ -6,7 +6,7 @@ interview angle. Target reading time: five minutes.
 ## Workflow
 
 1. **Load state.** Read `profile.md`, the last ~60 lines of `read-log.md`, and the source
-   registry (`~/.devops-research/sources.md` if present, else `references/sources.md`).
+   registry (`~/Developer/devops-research/sources.md` if present, else `references/sources.md`).
    If `digests/<today>.md` already exists, tell the user and offer a fresh sweep
    (excluding everything already delivered today) instead of silently duplicating.
    Completion: you can list the user's active prep topics, weak areas, and recently

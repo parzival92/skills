@@ -8,7 +8,7 @@
 
 ## Context
 
-- `~/.devops-research/` exists with a filled profile (senior DevOps, active prep:
+- `~/Developer/devops-research/` exists with a filled profile (senior DevOps, active prep:
   Kubernetes/CKA, Terraform on AKS) and a read-log containing ~30 prior items.
 - No digest exists for today.
 

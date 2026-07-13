@@ -8,7 +8,7 @@
 
 ## Context
 
-- `~/.devops-research/qbank.md` has ~25 entries across topics, several Kubernetes ones
+- `~/Developer/devops-research/qbank.md` has ~25 entries across topics, several Kubernetes ones
   with `last-drilled: never`, a few drilled 10+ days ago.
 - Profile weak areas list "NetworkPolicy" and "etcd backup/restore".
 - Digests exist for the last 10 days.
