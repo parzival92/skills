@@ -22,6 +22,10 @@ This file stores durable repo decisions and lessons. It is curated project memor
 - The `teach` intake established the working pattern: keep upstream files and license under `labs/skills/teach/original/`, keep adapted candidates under `labs/skills/teach/codex-port/` and `labs/skills/teach/claude-port/`, and keep manual evals under `evals/teach/`.
 - External skill intakes should pin the upstream commit hash before promotion if immutable provenance matters.
 
+## Promotions
+
+- `teach` (claude) was the first checklist-driven promotion (2026-07-13): `labs/skills/teach/claude-port/` moved to `skills/claude/teach/` after the writing-great-skills audit pass, with a worked example added under `examples/`. The codex port stayed in the lab and needs a re-sync with the promoted `SKILL.md` before its own promotion.
+
 ## Original Skills
 
 - `research` (2026-07-11) is the first fully original skill authored in `labs/skills/` (no external upstream; `SOURCE.md` records in-repo authorship). Its per-user state deliberately lives outside the repo in `~/Developer/devops-research/` because the repo is public and the state grows daily.

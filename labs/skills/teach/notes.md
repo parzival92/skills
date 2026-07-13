@@ -29,6 +29,17 @@ The core idea is that teaching should be grounded in the user's real reason for 
 - Make file creation expectations explicit for Codex.
 - Keep supporting format files next to the candidate `SKILL.md`.
 
+## Promotion Status
+
+- Claude port promoted to `skills/claude/teach/` on 2026-07-13 after the
+  writing-great-skills audit pass. Findings fixed at promotion: orphaned
+  `GLOSSARY-FORMAT.md` wired into `SKILL.md` (root `GLOSSARY.md` file, glossaries
+  removed from `reference/*.html`), "Output Expectations" duplication block removed,
+  lesson-scope rule single-homed in workflow step 6, step 10 given a checkable
+  completion. Worked example: `skills/claude/teach/examples/first-run-and-continuation.md`.
+- Codex port remains a lab candidate and has **not** received the 2026-07-13 audit
+  fixes; re-sync it with the promoted claude `SKILL.md` before promoting.
+
 ## Test Notes
 
 - Test first-run behavior when no `MISSION.md` exists.
